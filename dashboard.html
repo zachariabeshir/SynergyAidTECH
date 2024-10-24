@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | SynergyAid Technologies</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2em;
+      }
+      .logout-button {
+        padding: 10px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .logout-button:hover {
+        background-color: darkgreen;
+      }
+      nav {
+        margin-bottom: 20px;
+      }
+      nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: green;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+        h1 {
+          font-size: 1.5em;
+        }
+        .logout-button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="profile.html">Profile</a>
+        <a href="community.html">Community</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <h1 id="welcomeMessage">Welcome to Your Dashboard!</h1>
+      <p>You have successfully registered.</p>
+      <p>Explore the resources and connect with the community.</p>
+      <button
+        class="logout-button"
+        onclick="logout()"
+        aria-label="Logout from your account"
+      >
+        Logout
+      </button>
+    </div>
+
+    <script>
+      const user = { name: "Zacharia" }; // Simulated user data
+      document.addEventListener("DOMContentLoaded", function () {
+        const welcomeMessage = document.querySelector("#welcomeMessage");
+        welcomeMessage.textContent = `Welcome, ${user.name}!`;
+      });
+
+      function logout() {
+        window.location.href = "login.html"; // Redirects to the login page
+      }
+    </script>
+  </body>
+</html>
